@@ -1,0 +1,37 @@
+:root {
+  --gridGutter: 15px;
+}
+
+.column,
+.columns {
+  float: left;
+  padding-left: var(--gridGutter);
+  padding-right: var(--gridGutter);
+}
+
+.column:last-child,
+.columns:last-child {
+  float: right;
+}
+
+{{ for (var i = 1; i <= 12; i++) { }}
+.small-{{= i }} {
+  width: calc({{= i }} / 12 * 100%);
+}
+{{ } }}
+
+@media (--screen-medium) {
+{{ for (var i = 1; i <= 12; i++) { }}
+  .medium-{{= i }} {
+    width: calc({{= i }} / 12 * 100%);
+  }
+{{ } }}
+}
+
+@media (--screen-large) {
+{{ for (var i = 1; i <= 12; i++) { }}
+  .large-{{= i }} {
+    width: calc({{= i }} / 12 * 100%);
+  }
+{{ } }}
+}
